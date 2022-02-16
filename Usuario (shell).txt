@@ -1,0 +1,52 @@
+In [1]: from users_app.models import *
+
+In [2]: User.objects.create(
+   ...:     first_name="Armando", last_name="Vicencio", email="av@gmail.com", age=46
+   ...: )
+Out[2]: <User: User object (3)>
+
+In [3]: User.objects.create(
+   ...:     first_name="Claudia", last_name="Salas", email="dra@gmail.com", age=45
+   ...: )
+Out[3]: <User: User object (4)>
+
+In [4]: User.objects.create(
+   ...:     first_name="Anto", last_name="Vicencio", email="anto@gmail.com", age=14
+   ...: )
+Out[4]: <User: User object (5)>
+
+In [5]: User.objects.all()
+Out[5]: <QuerySet [<User: User object (1)>, <User: User object (2)>, <User: User object (3)>, <User: 
+User object (4)>, <User: User object (5)>]>
+
+In [6]: User.objects.first()
+Out[6]: <User: User object (1)>In 
+
+IN [7]: User.objects.last()
+Out[7]: <User: User object (5)>
+
+In [8]: c = User.objects.get(id=3)
+
+In [9]: c.last_name = "Pancakes"
+
+In [10]: c.save()
+
+In [11]: c=User.objects.get(id=2)
+
+In [12]: c.delete()
+
+Out[13]: (1, {'users_app.User': 1})In [28]: User.objects.all().order_by("first_name")
+
+In [14]: User.objects.all().order_by("first_name")
+Out[14]: <QuerySet [<User: User object (5)>, <User: User object (1)>, <User: User object (3)>, <User:
+ User object (4)>]>
+
+In [15]: c = User.objects.all().order_by("-first_name").values()
+
+
+
+
+
+
+
+
